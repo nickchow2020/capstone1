@@ -13,6 +13,25 @@ NewsApi_key='API_KEY'
 Google_Translate_API = 'API_KEY'
 ```
 
+## Update for Heroku 
+because this app is been polishing on the heroku there some step need to be consider 
+* I comment out the code on file helper.py line 4 
+* need a new variable on helper.py line 6-7
+```python
+4 # from API_KEY import NewsApi_key,Google_Translate_API
+
+6 NewsApi_key = os.environ.get("NewsAPI")
+7 Google_Translate_API=os.environ.get("GoogleAPI")
+```
+if you run in the local machine you need to commend it back and commend out 
+the code on line 6-7
+```python
+4 from API_KEY import NewsApi_key,Google_Translate_API
+
+6 # NewsApi_key = os.environ.get("NewsAPI")
+7 # Google_Translate_API=os.environ.get("GoogleAPI")
+```
+
 ### Create Database 
 on you machine create a database call "gogo_app_db" with SQLALCHEMY 
 and the app database configuaretion is like this:
