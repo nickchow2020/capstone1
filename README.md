@@ -72,4 +72,4 @@ and copy the paste the url on termial to you bowser
 ## Polishing on Heroku 
 I'm already polishing my capstone app on heroku 
 click here to view:
-[gogo_app](https://rapidapi.com/datascraper/api/google-translate20)
+[gogo_app](https://capstoneshumin.herokuapp.com)
