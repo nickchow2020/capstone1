@@ -16,7 +16,7 @@ Google_Translate_API = 'API_KEY'
 ## Update for Heroku 
 because this app is been polishing on the heroku there some step need to be consider 
 * I comment out the code on file helper.py line 4 
-* need a new variable on helper.py line 6-7
+* add new variables on helper.py line 6-7
 ```python
 4 # from API_KEY import NewsApi_key,Google_Translate_API
 
