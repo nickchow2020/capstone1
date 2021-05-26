@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for category,msg in get_flashed_messages(with_categories=true) %}
+        <p class="text-{{category}}">{{msg}}</p>
+    {% endfor %}
+    <div class="d-flex">
+        <div class="signbar col-2">
+            <a href="/vocabulary" class="btn btn-voc {% if not session['user_id'] %} disbtn {% endif %}"><h1>Vocabulary</h1></a>
+            <a href="/reading" class="btn btn-read mt-4 {% if not session['user_id'] %} disbtn {% endif %}"><h1>Reading</h1></a>
+            <a href="/grammar" class="btn btn-gra mt-4 {% if not session['user_id'] %} disbtn {% endif %}"><h1>Grammar</h1></a>
+            <a href="review" class="btn btn-rev mt-4 {% if not session['user_id'] %} disbtn {% endif %}"><h1>Review Voc</h1></a>
+            <a href="translate" class="btn btn-tra mt-4 {% if not session['user_id'] %} disbtn {% endif %}"><h1>Translate</h1></a>
+            <a href="studyplan" class="btn btn-plan mt-4 {% if not session['user_id'] %} disbtn {% endif %}"><h1>Study Plan</h1></a>
+        </div>
+        {% block barconts %}{% endblock%}
+    </div>
+{% endblock %}

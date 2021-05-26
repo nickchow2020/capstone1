@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST" class="col-8">
+        <h1>Edit Study Plan</h1>
+        {{form.hidden_tag()}}
+
+        {% for field in form if field.widget.input_type != "hidden" %}
+            {{field.label}}
+            {{field(class_="form-control")}}
+        {% endfor %}
+
+        <button class="btn btn-success mt-3">Save Plan</button>
+        <a href="/studyplan" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+{% endblock %}

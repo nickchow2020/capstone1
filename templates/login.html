@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center ">
+    <form method="POST" class="col-6 mt-5">
+
+        {% for category,msg in get_flashed_messages(with_categories=true) %}
+        <p class="text-{{category}}">
+            {{msg}}
+        </p>
+        {% endfor %}
+
+        <h1>Login to GoGo</h1>
+        {{form.hidden_tag()}}
+
+        {% for field in form if field.widget.input_type != "hidden" %}
+            {{field.label}}
+            {{field(class_="form-control")}}
+
+            {% for error in field.errors %}
+                <small class="text-danger">
+                    {{error}}
+                </small><br>
+            {% endfor %}
+        {% endfor %}
+        <p>Don't have an account? <a href="/signup">Register</a></p>
+        <button class="btn btn-primary mt-3 btn-lg">Sign In</button>
+        <a href="/" class="btn btn-secondary mt-3 btn-lg ml-3">Cancel</a>
+    </form>
+</div>
+{% endblock %}

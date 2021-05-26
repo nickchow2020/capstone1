@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST" class="col-8">
+        <h1>Edit Grammar</h1>
+        {{form.hidden_tag()}}
+
+        {% for field in form if field.widget.input_type != "hidden" %}
+            {{field.label}}
+            {{field(class_="form-control")}}
+        {% endfor %}
+
+        <button class="btn btn-primary mt-4" id="get-definition">Save</button>
+        <a href="/grammar" class="btn btn-success mt-4">Cancel</a>
+        <a href="/grammar/delete/{{grammar.id}}" class="mt-4 btn btn-danger">Delete</a>
+    </form>
+{% endblock %}

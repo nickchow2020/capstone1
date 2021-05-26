@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex flex-column">
+    <div class="d-flex flex-wrap">
+        {% for vol in vocabs %}
+        <form method="POST" id="prac-box">
+                <h4 class="">{{vol.vocabulary}}</h4>
+                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#{{vol.vocabulary}}">
+                    Flash Card
+                </button>
+                <a href="/review/dictionary/{{vol.id}}/{{review_list}}" class="btn btn-outline-info">Dictionary</a>
+    
+                <!-- Modal card-->
+                <div class="modal fade" id="{{vol.vocabulary}}" tabindex="-1" role="dialog" aria-labelledby="{{vol.vocabulary}}Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="{{vol.vocabulary}}Label">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body" id="definition">
+                            {{vol.vocabulary}}
+                        </div>
+                        <div class="modal-body" id="answer" style="display: none;">
+                            <p>{{vol.definition_en}}</p>
+                            <p>{{vol.definition_ch}}</p>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary taggle">Toggle</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </form>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="/review" class="btn btn-success">Going Back</a>
+    </div>
+</div>
+{% endblock %}

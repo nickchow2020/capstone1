@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+    save vocabulary
+{% endblock %}
+{% block content %}
+    <form method="POST" class="col-8">
+        <h1>Search Result</h1>  
+        {{form.hidden_tag()}}
+
+        {{form.vocabulary.label}}
+        {{form.vocabulary(class_="form-control",value=obj["vocabulary"])}}
+
+        {{form.category.label}}
+        {{form.category(class_="form-control")}}
+
+        {{form.definition_en.label}}
+        {{form.definition_en(class_="form-control",value=obj["definition_en"])}}
+
+        {{form.definition_ch.label}}
+        {{form.definition_ch(class_="form-control",value=obj["definition_ch"])}}
+
+        {{form.part_of_speech.label}}
+        {{form.part_of_speech(class_="form-control",value=obj["part_of_speech"])}}
+        <button class="btn btn-primary mt-4" id="get-definition">Save</button>
+        <a href="/add_vol" class="btn btn-success mt-4">Cancel</a>
+    </form>
+{% endblock %}

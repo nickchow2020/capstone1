@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+    add vocabulary
+{% endblock %}
+{% block content %}
+    <form method="POST" class="col-8">
+        <h1>Search Definition</h1>
+        <div>
+            <label for="search_def">Search Definition:</label>
+            <input type="text" name="vocab" id="search_def" class="form-control">
+        </div>
+
+        <button class="btn btn-primary mt-4" id="get-definition">Get Definition</button>
+        <a href="/vocabulary" class="btn btn-success mt-4">Cancel</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <form method="POST" id="spell-box">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Review Spelling</h5>
+                {% if result and result == True %}
+                <h4 class="text-success">Correct</h4>
+                {% elif result == False %}
+                <h4 class="text-danger">Wrong</h4>
+                {% endif %}
+            </div>
+            <div class="text-center my-4">
+                <p>{{vol.definition_en}}</p>
+                <p>{{vol.definition_ch}}</p>
+
+                {{form.hidden_tag()}}
+
+                {%for field in form if field.widget.input_type != "hidden" %}
+                    {{field.label}}
+                    {{field(class_="form-control")}}
+
+                    {% for err in field.errors %}
+                        <small>{{err}}</small>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Check</button>
+                <a href="/review/card/{{review_list}}" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

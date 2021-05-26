@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+    Review Grammar
+{% endblock %}
+{% block content %}
+    {% for category,msg in get_flashed_messages(with_categories=true) %}
+        <p class="text-{{category}}">{{msg}}</p>
+    {% endfor %}
+    <div class="d-flex">
+        <div class="signbar col-2">
+            <a href="/vocabulary" class="btn btn-voc"><h1>Vocabulary</h1></a>
+            <a href="/reading" class="btn btn-read mt-4"><h1>Reading</h1></a>
+            <a href="/grammar" class="btn btn-gra mt-4 {% if focus %}btn-focus{% endif %}"><h1>Grammar</h1></a>
+            <a href="review" class="btn btn-rev mt-4"><h1>Review Voc</h1></a>
+            <a href="translate" class="btn btn-tra mt-4"><h1>Translate</h1></a>
+            <a href="studyplan" class="btn btn-plan mt-4"><h1>Study Plan</h1></a>
+        </div>
+        <div class="barcontent px-5 col-10" style="background-color: #B6CBB3;">
+                <div id="grammar-top">
+                    {% for grammar in grammars%}
+                    <div id="grammar-box">
+                        <a href="/grammar/{{grammar.id}}"><h3>{{grammar.term}}</h3></a>
+                        <p>{{grammar.description}}</p>
+                        <h5>Example:</h5>
+                        <ul>
+                            <li>{{grammar.example1}}</li>
+                            <li>{{grammar.example2}}</li>
+                            <li>{{grammar.example3}}</li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div>
+                    <a href="/grammar/add" class="btn btn-success">Add New Grammar</a>
+                </div>
+        </div>
+    </div>
+{% endblock %}

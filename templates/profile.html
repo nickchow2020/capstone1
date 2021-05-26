@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title%}
+    user profile
+{% endblock %}
+{% block content %}
+    <h1>User Profile:</h1>
+    <h3>{{user.first}} {{user.last}}</h3>
+    <h6>Username:{{user.username}}</h6>
+    <h6>Email:{{user.email}}</h6>
+    <h6>Primary Language:{{user.native_language}}</h6>
+    <h6>Secondary Language:{{user.second_language}}</h6>
+    <a href="/home" class="btn btn-warning">Back</a>
+{% endblock %}

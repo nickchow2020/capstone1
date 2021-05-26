@@ -1,0 +1,235 @@
+/* Header Layout */
+header{
+    min-height: 8rem;
+    background-color: teal;
+}
+
+
+/* page Layout */
+html body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.divcontainer{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fullheight{
+    height: 100%;
+}
+
+.btn{
+    width: 15rem;
+}
+
+.content{
+    flex:1 0 auto;
+}
+
+/* footer Layout */
+footer{
+    height: 3rem;
+    background-color: teal;
+    flex-shrink: 0;
+}
+
+/* buttons style */
+.btn-voc{
+    background: #9498A8;
+    color: white;
+}
+.btn-read{
+    background: #7C7E88;
+    color: white;
+
+}
+.btn-gra{
+    background: #B6CBB3;
+    color: black;
+
+}
+.btn-rev{
+    background: #DDF0DB;
+    color: black;
+
+}
+
+.btn-tra{
+    background: #A1B6DE;
+    color:tomato;
+}
+
+.btn-plan{
+    background: #77A0EE;
+    color:tomato;
+
+}
+
+.btn-focus {
+    color: white;
+    box-shadow: inset 0 0 30px 5px black;
+}
+
+/* Before login */
+.disbtn{
+    opacity: .2;
+    pointer-events: none
+}
+
+/* bar content page layout */
+.barcontent{
+    border-radius: 10px;
+    box-shadow:0 0 2px 2px gray;
+    margin-left: .5rem;
+    max-height: 100%;
+}
+
+#read-section{
+    width: 100%;
+    height: 30rem;
+    overflow: scroll;
+    border-bottom: solid white 2px;
+}
+
+#read-box{
+    width: 48%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    color: white;
+}
+
+/* vocabulary session */
+#grammar-top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    min-height: 80%;
+    border-bottom: solid white 3px;
+    margin-bottom: 2rem;
+    height: 35rem;
+    overflow: scroll;
+}
+
+#vol-top{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    min-height: 80%;
+    border-bottom: solid white 3px;
+    margin-bottom: 2rem;
+    height: 35rem;
+    overflow: scroll;
+}
+
+#vol-box{
+    width: 20%;
+    height: 5rem;
+    display: block;
+    background: #000;
+}
+
+#vol-top a{
+    color: white;
+}
+
+#read-box a{
+    color: white;
+}
+
+#grammar-box a{
+    color: purple;
+}
+
+/* Grammar Section */
+#grammar-box{
+    width: 48%;
+}
+
+
+/* practice section */
+#prac-box{
+    min-width: 10rem;
+    height: 11rem;
+    margin: 0 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* bootstrap button style  */
+.btn-outline-success,
+.btn-outline-info{
+    width: 8rem;
+    margin-bottom: .2rem;
+}
+
+/* style bootstrap models */
+.modal-content{
+    height: 100%;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+/* Translate Section Layout */
+#translate_form{
+    margin-bottom: 1rem;
+}
+
+.translate_content{
+    display: block;
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 1rem;
+    overflow: scroll;
+}
+
+.select_language{
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+}
+
+#result{
+    display: block;
+    width: 100%;
+    height: 13rem;
+    overflow: scroll;
+}
+/* Study Plan Section */
+.show_plans{
+    height: 35rem;
+    display: block;
+    overflow: scroll;
+    border-bottom: solid white 2px;
+}
+
+.plan-box{
+    border: solid white 2px;
+    width: 23%;
+    height: 20rem;
+    margin: 1rem;
+}
+
+.plan_form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.complete{
+    border: solid green 2px;
+}

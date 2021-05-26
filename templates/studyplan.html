@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+    studyplan
+{% endblock %}
+{% block content %}
+    {% for category,msg in get_flashed_messages(with_categories=true) %}
+        <p class="text-{{category}}">{{msg}}</p>
+    {% endfor %}
+    <div class="d-flex">
+        <div class="signbar col-2">
+            <a href="/vocabulary" class="btn btn-voc"><h1>Vocabulary</h1></a>
+            <a href="/reading" class="btn btn-read mt-4"><h1>Reading</h1></a>
+            <a href="/grammar" class="btn btn-gra mt-4"><h1>Grammar</h1></a>
+            <a href="review" class="btn btn-rev mt-4"><h1>Review Voc</h1></a>
+            <a href="translate" class="btn btn-tra mt-4"><h1>Translate</h1></a>
+            <a href="studyplan" class="btn btn-plan mt-4 {% if focus %}btn-focus{% endif %}"><h1>Study Plan</h1></a>
+        </div>
+        <div class="barcontent px-5 col-10" style="background-color: #77A0EE;">
+            <div class="show_plans d-flex flex-wrap justify-content-between">
+
+                {% for plan in user.plans%}
+                    <div class="plan-box {% if plan.is_complete %} complete {% endif %}">
+                        <form action="/studyplan/statusupdate/{{plan.id}}" method="POST" class="plan_form">
+                            <table>
+                                <tr>
+                                    <th>Plan:</th>
+                                    <td>{{plan.plan}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Repeat:</th>
+                                    <td>{{plan.repeat}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Start_Data:</th>
+                                    <td>{{plan.start_data}}</td>
+                                </tr>
+                                <tr>
+                                    <th>End_Data:</th>
+                                    <td>{{plan.end_data}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Complete:</th>
+                                    <td>{{plan.is_complete}}</td>
+                                </tr>
+                            </table>
+                            <button class="btn btn-primary mt-2">{% if plan.is_complete %}Redo{% else %}complete{% endif %}</button>
+                            <a href="/plan/update/{{plan.id}}" class="btn btn-success mt-1">Update</a>
+                            <a href="/plan/delete/{{plan.id}}" class="btn btn-danger mt-1">Delete</a>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div id="add_plan">
+                <a href="/studyplan/add" class="btn btn-success mt-4">Add Plan</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

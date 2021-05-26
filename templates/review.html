@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title%}
+    Review vocabulary
+{% endblock %}
+{% block content %}
+    {% for category,msg in get_flashed_messages(with_categories=true) %}
+        <p class="text-{{category}}">{{msg}}</p>
+    {% endfor %}
+    <div class="d-flex">
+        <div class="signbar col-2">
+            <a href="/vocabulary" class="btn btn-voc"><h1>Vocabulary</h1></a>
+            <a href="/reading" class="btn btn-read mt-4"><h1>Reading</h1></a>
+            <a href="/grammar" class="btn btn-gra mt-4"><h1>Grammar</h1></a>
+            <a href="review" class="btn btn-rev mt-4 {% if focus %}btn-focus{% endif %}"><h1>Review Voc</h1></a>
+            <a href="translate" class="btn btn-tra mt-4"><h1>Translate</h1></a>
+            <a href="studyplan" class="btn btn-plan mt-4"><h1>Study Plan</h1></a>
+        </div>
+        <div class="barcontent px-5 col-10" style="background-color: #DDF0DB;">
+            <form method="POST">
+                <div id="vol-top">
+                    <h1>Check Vocabulary to Review</h1>
+                    <ol>
+                        {% for vol in user.vocabularies %}
+                        <li>
+                            <label for="{{vol.vocabulary}}">{{vol.vocabulary}}</label>
+                            <input type="checkbox" value="{{vol.id}}" id="{{vol.vocabulary}}" name={{vol.id}}>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <button class="btn btn-success">Go Review</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
