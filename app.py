@@ -1,3 +1,4 @@
+import os
 from operator import methodcaller
 from flask import Flask,render_template,redirect,session,flash,request
 from flask_debugtoolbar import DebugToolbarExtension, _printable
@@ -12,11 +13,11 @@ app.debug = True
 
 connect_db(app)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///gogo_app_db'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL','postgresql:///gogo_app_db')
 app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
-app.config["SECRET_KEY"] = "MY_SECRET_KEY_10_20"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY","MY_SECRET_KEY_10_20")
 
 toolbar = DebugToolbarExtension(app)
 

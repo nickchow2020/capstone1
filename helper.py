@@ -1,11 +1,15 @@
+import os
 from newsapi import NewsApiClient
-from API_KEY import NewsApi_key,Google_Translate_API
+
+# from API_KEY import NewsApi_key,Google_Translate_API
+
+NewsApi_key = os.environ.get("NewsAPI")
+Google_Translate_API=os.environ.get("GoogleAPI")
+
 import requests
 
 newsapi = NewsApiClient(api_key=NewsApi_key)
 translate_url = "https://google-translate20.p.rapidapi.com/translate"
-
-
 
 languages = {
         "auto":"Detect Language",
