@@ -73,3 +73,27 @@ and copy the paste the url on termial to you bowser
 I'm already polishing my capstone app on heroku 
 click here to view:
 [gogo_app](https://capstoneshumin.herokuapp.com)
+
+
+### About GoGo App(Capstone1)
+Build this app to help to improve English Level,you will able to add and practice vocabulary,study grammar you have learns
+making daily,weekly and monthly plan.
+
+## Section of the app
+# Vocabulary
+Allow to add any Vocabulary,store its definition in both English and Chinese into database
+
+# Reading
+Allow to read any articles online to improve reading level 
+           
+# Grammar
+Allow to add any Grammar skill have learned
+
+# Review Vol
+Allow to practice Vocabulary 
+      
+# Translate
+Allow to translate any sentence into any language
+
+# Study Plan
+Allow add daily,weekly,or monthly plan
