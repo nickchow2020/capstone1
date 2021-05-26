@@ -80,20 +80,20 @@ Build this app to help to improve English Level,you will able to add and practic
 making daily,weekly and monthly plan.
 
 ## Section of the app
-# Vocabulary
+### Vocabulary
 Allow to add any Vocabulary,store its definition in both English and Chinese into database
 
-# Reading
+### Reading
 Allow to read any articles online to improve reading level 
            
-# Grammar
+### Grammar
 Allow to add any Grammar skill have learned
 
-# Review Vol
+### Review Vol
 Allow to practice Vocabulary 
       
-# Translate
+### Translate
 Allow to translate any sentence into any language
 
-# Study Plan
+### Study Plan
 Allow add daily,weekly,or monthly plan
